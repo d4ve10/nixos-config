@@ -15,5 +15,5 @@
   ./flatpak.nix
   ./kitty.nix
   ./obs.nix
-  # ./games.nix
+  ./games.nix
 ]

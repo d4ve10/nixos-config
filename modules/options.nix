@@ -37,5 +37,11 @@ with lib;
         default = false;
       };
     };
+    gaming = {
+      enable = mkOption {
+        type = types.bool;
+        default = false;
+      };
+    };
   };
 }

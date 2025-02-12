@@ -77,6 +77,29 @@ in
     ];
   };
 
+  # Gaming Profile
+  dave-gaming = lib.nixosSystem {
+    inherit system;
+    specialArgs = {
+      inherit inputs my_dotfiles system stable vars;
+      host = {
+        hostName = "dave-gaming-nixos";
+      };
+    };
+    modules = [
+      nixvim.nixosModules.nixvim
+      ./dave-gaming
+      ./configuration.nix
+
+      home-manager.nixosModules.home-manager
+      {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+      }
+    ];
+  };
+
   # VM Profile
   vm = lib.nixosSystem {
     inherit system;
