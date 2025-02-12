@@ -19,12 +19,6 @@ with lib;
         default = false;
       };
     };
-    framework-laptop = {
-      enable = mkOption {
-        type = types.bool;
-        default = false;
-      };
-    };
     suspend-then-hibernate = {
       enable = mkOption {
         type = types.bool;

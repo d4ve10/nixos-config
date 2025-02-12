@@ -5,7 +5,7 @@
 { lib, pkgs, vars, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ ./hardware-configuration.nix ./../../modules/hardware/optional/framework-laptop.nix ];
 
   boot = {
     loader = {
@@ -33,10 +33,10 @@
     };
   };
 
-  framework-laptop.enable = true;
   laptop.enable = true;
   kde.enable = true;
   virtualization.enable = true;
+  gaming.enable = true;
 
   services.tailscale.enable = true;
   systemd.services.tailscaled.wantedBy = lib.mkForce []; # Disable auto-start of tailscale
