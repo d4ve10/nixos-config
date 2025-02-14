@@ -33,6 +33,14 @@
     };
   };
 
+  environment = {
+    systemPackages = with pkgs; [
+      input-leap
+    ];
+  };
+
+  networking.firewall.enable = false;
+
   kde.enable = true;
   virtualization.enable = true;
   gaming.enable = true;

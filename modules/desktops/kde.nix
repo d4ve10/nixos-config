@@ -11,7 +11,6 @@ with lib;
   config = mkIf (config.kde.enable) {
     services.gnome.core-utilities.enable = false;
     programs = {
-      zsh.enable = true;
       kdeconnect = {
         enable = true;
       };
@@ -25,6 +24,7 @@ with lib;
       };
       desktopManager.plasma6 = {
         enable = true;
+        # enableQt5Integration = false;
       };
       libinput.enable = true;
       xserver = {
@@ -62,6 +62,12 @@ with lib;
     };
 
     home-manager.users.${vars.user} = {
+      home.pointerCursor = {
+        x11.enable = true;
+        name = "breeze_cursors";
+        size = 24;
+        package = pkgs.kdePackages.breeze;
+      };
       gtk = {
         enable = false; # Doesn't work well because KDE overrides ~/.gtkrc-2.0 after login
         theme.name = "Breeze";

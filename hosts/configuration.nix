@@ -126,7 +126,7 @@ in
       VISUAL = "${vars.editor}";
       BROWSER = "${vars.browser}";
     };
-    systemPackages = with pkgs; [
+    systemPackages = with pkgs; with pkgs.kdePackages; [
       inputs.zen-browser.packages."${system}".default # Zen Browser Beta
       # Developing
       git # Version Control
@@ -156,7 +156,7 @@ in
       age # Encryption
       ethtool # Network Config
       syncthing # Sync Tool
-      terminal # Terminal Emulator
+      konsole # Terminal Emulator
       btop # Resource Manager
       htop # Resource Manager
       iftop # Network Monitor

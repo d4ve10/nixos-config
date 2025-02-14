@@ -12,6 +12,7 @@ in
   users.users.${vars.user} = with pkgs; {
     shell = zsh;
   };
+  programs.zsh.enable = true;
 
   home-manager.users.${vars.user} = {
 
