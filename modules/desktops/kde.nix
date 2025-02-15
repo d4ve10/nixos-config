@@ -362,25 +362,31 @@ with lib;
           "change-keyboard-layout" = {
             name = "Change Keyboard Layout";
             key = "Ctrl+Alt+K";
-            command = "\"~/bin/change-keyboard-layout\"";
+            command = "/home/${vars.user}/bin/change-keyboard-layout";
+            logs.enabled = false;
+          };
+          "spectacle" = {
+            name = "Spectacle Screenshot";
+            key = "Meta+Shift+S";
+            command = "${pkgs.kdePackages.spectacle}/bin/spectacle -r";
             logs.enabled = false;
           };
           "xrandr-display" = {
             name = "Toggle Display";
             key = "Ctrl+Alt+Shift+S";
-            command = "\"~/bin/xrandr-display && ~/bin/switch-display linux && xdotool key ctrl+alt+shift+d\"";
+            command = "${pkgs.bash}/bin/bash -c \"/home/${vars.user}/bin/xrandr-display && /home/${vars.user}/bin/switch-display linux && xdotool key ctrl+alt+shift+d\"";
             logs.enabled = false;
           };
           "switch-windows" = {
             name = "Switch Display to Windows Output";
             key = "Ctrl+Alt+Shift+A";
-            command = "\"~/bin/switch-display windows\"";
+            command = "/home/${vars.user}/bin/switch-display windows";
             logs.enabled = false;
           };
           "reload-plasma" = {
             name = "Reload Plasma";
             key = "Meta+Shift+K";
-            command = "\"systemctl --user restart plasma-plasmashell\"";
+            command = "${pkgs.systemd}/bin/systemctl --user restart plasma-plasmashell";
             logs.enabled = false;
           };
         };
@@ -410,6 +416,9 @@ with lib;
           systemsettingsrc.systemsettings_sidebar_mode.HighlightNonDefaultSettings = true;
           "flameshot/flameshot.ini".General.showDesktopNotification = false;
           "flameshot/flameshot.ini".General.showStartupLaunchMessage = false;
+          "flameshot/flameshot.ini".General.autoCloseIdleDaemon = true;
+          "flameshot/flameshot.ini".General.disabledTrayIcon = true;
+          "flameshot/flameshot.ini".General.saveLastRegion = true;
         };
 
         dataFile = {
