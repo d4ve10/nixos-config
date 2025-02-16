@@ -6,6 +6,11 @@
 {
   services = {
     printing.enable = true;
+    printing.drivers = with pkgs; [
+      gutenprint
+      gutenprintBin
+      cups-filters
+    ];
   };
   hardware = {
     sane = {
