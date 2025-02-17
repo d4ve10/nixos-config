@@ -68,8 +68,11 @@ with lib;
         size = 24;
         package = pkgs.kdePackages.breeze;
       };
+      home.file."/home/${vars.user}/.gtkrc-2.0".force = lib.mkForce true;
+      home.file."/home/${vars.user}/.config/gtk-3.0/settings.ini".force = lib.mkForce true;
+      home.file."/home/${vars.user}/.config/gtk-4.0/settings.ini".force = lib.mkForce true;
       gtk = {
-        enable = false; # Doesn't work well because KDE overrides ~/.gtkrc-2.0 after login
+        enable = true; # Doesn't work well because KDE overrides ~/.gtkrc-2.0 after login
         theme.name = "Breeze";
         iconTheme.name = "breeze-dark";
         cursorTheme = {
@@ -78,9 +81,11 @@ with lib;
         };
         gtk3.extraConfig = {
           gtk-application-prefer-dark-theme = true;
+          gtk-decoration-layout = "icon:minimize,maximize,close";
         };
         gtk4.extraConfig = {
           gtk-application-prefer-dark-theme = true;
+          gtk-decoration-layout = "icon:minimize,maximize,close";
         };
       };
 

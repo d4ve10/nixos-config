@@ -243,9 +243,10 @@ in
       rclone # Gdrive ($ rclone config | rclone mount --daemon gdrive: <mount> | fusermount -u <mount>)
 
       # Misc
+      adwaita-icon-theme # Icons for GTK apps
       cacert # CA Certificates
       efibootmgr # EFI Boot Manager
-      libreoffice # Office
+      libreoffice-qt6 # Office
       qFlipper # Flipper Zero
       ferdium # Services Manager
 
@@ -367,6 +368,7 @@ in
     stateVersion = "24.11";
   };
 
+  home-manager.backupFileExtension = "backup";
   home-manager.users.${vars.user} = {
     home = {
       stateVersion = "24.11";
