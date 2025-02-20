@@ -254,6 +254,7 @@ in
       yubioath-flutter # Yubikey Authenticator
       yubikey-manager # Yubikey CLI
       bitwarden-desktop # Bitwarden Desktop
+      keepassxc # Password Manager
 
       # University
       vmware-horizon-client # Remote Desktop
@@ -274,6 +275,8 @@ in
         formatted = builtins.concatStringsSep "\n" sortedUnique;
       in
         formatted;
+
+    etc.hosts.mode = "0644";
   };
 
   # Enable OpenGL

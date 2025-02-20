@@ -72,7 +72,7 @@ with lib;
       home.file."/home/${vars.user}/.config/gtk-3.0/settings.ini".force = lib.mkForce true;
       home.file."/home/${vars.user}/.config/gtk-4.0/settings.ini".force = lib.mkForce true;
       gtk = {
-        enable = true; # Doesn't work well because KDE overrides ~/.gtkrc-2.0 after login
+        enable = true;
         theme.name = "Breeze";
         iconTheme.name = "breeze-dark";
         cursorTheme = {
