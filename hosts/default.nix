@@ -9,7 +9,7 @@
 #           └─ default.nix
 #
 
-{ inputs, nixpkgs, nixpkgs-stable, nixos-hardware, my_dotfiles, home-manager, nur, nixvim, plasma-manager, vars, ... }:
+{ inputs, nixpkgs, nixpkgs-stable, nixos-hardware, my_dotfiles, home-manager, nur, nixvim, plasma-manager, vars, fw-fanctrl, ... }:
 
 let
   system = "x86_64-linux";
@@ -64,6 +64,7 @@ in
     };
     modules = [
       nixos-hardware.nixosModules.framework-11th-gen-intel
+      fw-fanctrl.nixosModules.default
       nixvim.nixosModules.nixvim
       ./dave-framework
       ./configuration.nix

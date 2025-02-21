@@ -38,4 +38,6 @@ with lib;
     };
   };
 
+  programs.fw-fanctrl.enable = true;
+  programs.fw-fanctrl.config.defaultStrategy = "lazy";
 }

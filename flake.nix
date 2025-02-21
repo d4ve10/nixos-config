@@ -53,10 +53,15 @@
         inputs.home-manager.follows = "nixpkgs";
       };
 
+      fw-fanctrl = {
+        url = "github:TamtamHero/fw-fanctrl/packaging/nix";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+
       zen-browser.url = "github:0xc000022070/zen-browser-flake";
     };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, nixos-hardware, my_dotfiles, home-manager, home-manager-stable, nur, nixgl, nixvim, nixvim-stable, plasma-manager, zen-browser, ... }: # Function telling flake which inputs to use
+  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, nixos-hardware, my_dotfiles, home-manager, home-manager-stable, nur, nixgl, nixvim, nixvim-stable, plasma-manager, fw-fanctrl, zen-browser, ... }: # Function telling flake which inputs to use
     let
       # Variables Used In Flake
       vars = {
@@ -82,7 +87,7 @@
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs nixpkgs-stable nixos-hardware my_dotfiles home-manager nur nixvim plasma-manager zen-browser vars; # Inherit inputs
+          inherit inputs nixpkgs nixpkgs-stable nixos-hardware my_dotfiles home-manager nur nixvim plasma-manager fw-fanctrl zen-browser vars; # Inherit inputs
         }
       );
 
