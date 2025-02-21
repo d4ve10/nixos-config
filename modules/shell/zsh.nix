@@ -13,6 +13,7 @@ in
     shell = zsh;
   };
   programs.zsh.enable = true;
+  programs.command-not-found.enable = false;
 
   home-manager.users.${vars.user} = {
 
@@ -40,6 +41,10 @@ in
             file = "powerlevel10k.zsh-theme";
           }
         ];
+      };
+      nix-index = {
+        enable = true;
+        enableZshIntegration = true;
       };
     };
   };

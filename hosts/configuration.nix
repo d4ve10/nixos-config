@@ -163,6 +163,7 @@ in
       wavemon # Wifi Monitor
       nh # Nix Helper
       nvd # Nix Diff
+      nix-index # Nix Search
       hdparm # Disk Management
       ncdu # Disk Usage
       cmatrix # Matrix
