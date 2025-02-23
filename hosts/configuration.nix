@@ -155,6 +155,7 @@ in
       openconnect # Cisco Anyconnect
       age # Encryption
       ethtool # Network Config
+      iperf # Network Speed
       syncthing # Sync Tool
       konsole # Terminal Emulator
       btop # Resource Manager
