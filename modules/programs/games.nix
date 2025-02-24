@@ -25,7 +25,6 @@
       # lutris # Game Launcher
       prismlauncher # MC Launcher
       retroarch-full # Emulator
-      steam # Game Launcher
       protonup-qt # Proton-GE GUI Installer
       vulkan-tools # vkcube
       mesa-demos # glxgears

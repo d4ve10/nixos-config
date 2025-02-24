@@ -62,6 +62,7 @@ in
     # networkmanager.wifi.backend = "iwd";
     hostName = hostName;
     enableIPv6 = true;
+    usePredictableInterfaceNames = false;
     # Syncthing Ports
     firewall.allowedTCPPorts = [ 22000 ];
     firewall.allowedUDPPorts = [ 22000 21027 51820 ];
@@ -133,12 +134,15 @@ in
       uv # Python Project Manager
       python3 # Python
       nodejs # Javascript
+      go # Go
+      ripgrep # Search
       nil # LSP for Nix
       mongosh # MongoDB Shell
       postman # API Testing
 
       # Sysadmin
       nmap # Network
+      rustscan # Network
       nettools # Network
       dig # DNS
       dnslookup # DNS
@@ -206,7 +210,6 @@ in
 
       # Apps
       appimage-run # Runs AppImages on NixOS
-      firefox # Browser
       google-chrome # Browser
       brave # Browser
       remmina # XRDP & VNC Client

@@ -2,15 +2,6 @@
 
 {
   environment = {
-    systemPackages = with pkgs; [
-      go
-      nodejs
-      (python3.withPackages (ps: with ps; [
-        pip
-      ]))
-      ripgrep
-      # zig
-    ];
     variables = {
       PATH = "$HOME/.npm-packages/bin:$PATH";
       NODE_PATH = "$HOME/.npm-packages/lib/node_modules:$NODE_PATH:";

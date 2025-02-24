@@ -37,7 +37,6 @@ with lib;
         virt-viewer # Remote VM
         qemu # Virtualizer
         OVMF # UEFI Firmware
-        gvfs # Shared Directory
         swtpm # TPM
         virglrenderer # Virtual OpenGL
       ];
