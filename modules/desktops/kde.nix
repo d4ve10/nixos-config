@@ -9,7 +9,6 @@
 with lib;
 {
   config = mkIf (config.kde.enable) {
-    services.gnome.core-utilities.enable = false;
     programs = {
       kdeconnect = {
         enable = true;
@@ -24,7 +23,7 @@ with lib;
       };
       desktopManager.plasma6 = {
         enable = true;
-        # enableQt5Integration = false;
+        enableQt5Integration = false;
       };
       libinput.enable = true;
       xserver = {
@@ -38,12 +37,6 @@ with lib;
       };
     };
 
-    qt = {
-      enable = true;
-      platformTheme = "kde";
-      style = "breeze";
-    };
-
     environment = {
       sessionVariables = {
         GTK_USE_PORTAL = "1";
@@ -52,12 +45,6 @@ with lib;
       };
       systemPackages = with pkgs.kdePackages; [
         packagekit-qt # Package Updater
-      ];
-      plasma5.excludePackages = with pkgs.libsForQt5; [
-        plasma-browser-integration
-      ];
-      plasma6.excludePackages = with pkgs.kdePackages; [
-        oxygen
       ];
     };
 
