@@ -149,6 +149,7 @@ in
       inetutils # Network
       ansible # Automation
       sshpass # Ansible dependency
+      sshfs # Mount
       postgresql # PostgreSQL Database
       mariadb # MariaDB Database
 
@@ -322,8 +323,8 @@ in
       enable = true;
       enableSSHSupport = false;
       settings = {
-        defaultCacheTTL = 28800;
-        maxCacheTTL = 28800;
+        default-cache-ttl = 28800;
+        max-cache-ttl = 28800;
       };
     };
     ssh = {
