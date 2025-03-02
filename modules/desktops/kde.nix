@@ -384,6 +384,7 @@ with lib;
         };
 
         configFile = {
+          PlasmaDiscoverUpdates.Global.RequiredNotificationInterval = -1;
           plasmashellrc."Notification Messages".klipperClearHistoryAskAgain = false;
           ksmserverrc.General.loginMode = "emptySession";
           ksmserverrc.General.shutdownType = 2;
