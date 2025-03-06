@@ -9,7 +9,7 @@
 #           └─ default.nix
 #
 
-{ inputs, nixpkgs, nixpkgs-stable, nixos-hardware, my_dotfiles, home-manager, nur, nixvim, plasma-manager, vars, fw-fanctrl, ... }:
+{ inputs, nixpkgs, nixpkgs-stable, nixos-hardware, nix-index-database, my_dotfiles, home-manager, nur, nixvim, plasma-manager, vars, fw-fanctrl, ... }:
 
 let
   system = "x86_64-linux";
@@ -39,6 +39,7 @@ in
       };
     };
     modules = [
+      nix-index-database.nixosModules.nix-index
       nur.nixosModules.nur
       nixvim.nixosModules.nixvim
       ./dave-pc
@@ -63,6 +64,7 @@ in
       };
     };
     modules = [
+      nix-index-database.nixosModules.nix-index
       nixos-hardware.nixosModules.framework-11th-gen-intel
       fw-fanctrl.nixosModules.default
       nixvim.nixosModules.nixvim
@@ -88,6 +90,7 @@ in
       };
     };
     modules = [
+      nix-index-database.nixosModules.nix-index
       nixvim.nixosModules.nixvim
       ./dave-gaming
       ./configuration.nix
@@ -114,6 +117,7 @@ in
       };
     };
     modules = [
+      nix-index-database.nixosModules.nix-index
       nixvim.nixosModules.nixvim
       ./vm
       ./configuration.nix

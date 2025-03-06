@@ -5,6 +5,11 @@
       nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11"; # Stable Nix Packages
       nixos-hardware.url = "github:nixos/nixos-hardware/master"; # Hardware Specific Configurations
 
+      nix-index-database = {
+        url = "github:nix-community/nix-index-database";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+
       my_dotfiles = {
         url = "github:d4ve10/dotfiles";
         flake = false;
@@ -61,7 +66,7 @@
       zen-browser.url = "github:0xc000022070/zen-browser-flake";
     };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, nixos-hardware, my_dotfiles, home-manager, home-manager-stable, nur, nixgl, nixvim, nixvim-stable, plasma-manager, fw-fanctrl, zen-browser, ... }: # Function telling flake which inputs to use
+  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, nixos-hardware, nix-index-database, my_dotfiles, home-manager, home-manager-stable, nur, nixgl, nixvim, nixvim-stable, plasma-manager, fw-fanctrl, zen-browser, ... }: # Function telling flake which inputs to use
     let
       # Variables Used In Flake
       vars = {
@@ -87,7 +92,7 @@
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs nixpkgs-stable nixos-hardware my_dotfiles home-manager nur nixvim plasma-manager fw-fanctrl zen-browser vars; # Inherit inputs
+          inherit inputs nixpkgs nixpkgs-stable nixos-hardware nix-index-database my_dotfiles home-manager nur nixvim plasma-manager fw-fanctrl zen-browser vars; # Inherit inputs
         }
       );
 
