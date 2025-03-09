@@ -233,7 +233,6 @@ in
       krdc # Remote Desktop
       rustdesk-flutter # Remote Desktop
       localsend # Local File Sharing
-      logseq # Notes
       joplin-desktop # Notes
       graphviz # Graphs
       zgrviewer # Graphs Viewer
@@ -290,10 +289,6 @@ in
     enable32Bit = true;
   };
 
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-27.3.11" # Logseq
-  ];
 
   programs.firefox = {
     enable = true;
