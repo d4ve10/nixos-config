@@ -127,145 +127,143 @@ in
       VISUAL = "${vars.editor}";
       BROWSER = "${vars.browser}";
     };
-    systemPackages = with pkgs; with pkgs.kdePackages; [
-      inputs.zen-browser.packages."${system}".default # Zen Browser Beta
-      # Developing
-      rustup # Rust
-      cargo # Rust
-      git # Version Control
-      uv # Python Project Manager
-      python3 # Python
-      nodejs # Javascript
-      go # Go
-      ripgrep # Search
-      nil # LSP for Nix
-      mongosh # MongoDB Shell
-      postman # API Testing
-      nixfmt-rfc-style # Nix formatting
-      distrobox # Create small VMs
+    systemPackages = with pkgs; with pkgs.kdePackages; with inputs; [
 
-      # Sysadmin
-      nmap # Network
-      rustscan # Network
-      nettools # Network
+      # Development Tools
+      distrobox # Create small VMs
+      git # Version Control
+      go # Go
+      jdk23 # Java
+      mariadb # MariaDB Database
+      mongosh # MongoDB Shell
+      nil # LSP for Nix
+      nixfmt-rfc-style # Nix formatting
+      nodejs # Javascript
+      nodePackages.pnpm # Package Manager
+      postgresql # PostgreSQL Database
+      postman # API Testing
+      python3 # Python
+      rustup # Rust
+      uv # Python Project Manager
+
+      # Networking
       dig # DNS
       dnslookup # DNS
       inetutils # Network
-      ansible # Automation
-      sshpass # Ansible dependency
-      sshfs # Mount
-      postgresql # PostgreSQL Database
-      mariadb # MariaDB Database
-
-      # Terminal
-      openssl # Security
-      openvpn # VPN
-      wireguard-tools # VPN
+      nettools # Network
+      nmap # Network
       openconnect # Cisco Anyconnect
-      age # Encryption
-      ethtool # Network Config
-      iperf # Network Speed
-      syncthing # Sync Tool
-      konsole # Terminal Emulator
+      openvpn # VPN
+      rustscan # Network
+      sshfs # Mount
+      traceroute # Network
+      wavemon # Wifi Monitor
+      wireguard-tools # VPN
+      wireshark-qt # Network Analyzer
+
+      # System Utilities
+      adwaita-icon-theme # Icons for GTK apps
+      age # Encryption Tool
+      ansible # Automation
+      appimage-run # Runs AppImages on NixOS
       btop # Resource Manager
+      cifs-utils # Samba
+      cacert # CA Certificates
+      cmatrix # Matrix
+      coreutils # GNU Utilities
+      efibootmgr # EFI Boot Manager
+      ethtool # Network Config
+      hdparm # Disk Management
       htop # Resource Manager
       iftop # Network Monitor
-      wavemon # Wifi Monitor
-      nh # Nix Helper
-      nvd # Nix Diff
-      hdparm # Disk Management
-      ncdu # Disk Usage
-      cmatrix # Matrix
-      cifs-utils # Samba
-      coreutils # GNU Utilities
+      iperf # Network Speed
       killall # Process Killer
+      konsole # Terminal Emulator
+      linux-firmware # Proprietary Hardware Blob
       lshw # Hardware Config
       nano # Text Editor
-      nodejs # Javascript Runtime
-      nodePackages.pnpm # Package Manager
-      nix-tree # Browse Nix Store
+      ncdu # Disk Usage
+      nh # Nix Helper
       nix-du # Nix Disk Usage
+      nix-tree # Browse Nix Store
+      nvd # Nix Diff
+      openssl # Security
       pciutils # Manage PCI
-      ranger # File Manager
+      powertop # Power Management
+      ripgrep # Search
+      screen # Terminal Multiplexer
+      screenfetch # System Info
       smartmontools # Disk Health
+      sshpass # Ansible dependency
       tldr # Helper
+      tree # Directory
       usbutils # Manage USB
       wget # Retriever
       xdg-utils # Environment integration
-      jdk23 # Java
-      screenfetch # System Info
-      powertop # Power Management
-      screen # Terminal Multiplexer
-      traceroute # Network
-      tree # Directory
-      wireshark-qt # Network
 
-      # Video/Audio
+      # Media & Graphics
       alsa-utils # Audio Control
-      linux-firmware # Proprietary Hardware Blob
+      handbrake # Video Converter
+      imagemagick # Image Converter
       mpv # Media Player
       pavucontrol # Audio Control
       pipewire # Audio Server/Control
       pulseaudio # Audio Server/Control
       qpwgraph # Pipewire Graph Manager
       vlc # Media Player
-      handbrake # Video Converter
-      imagemagick # Image Converter
 
-      # Apps
-      appimage-run # Runs AppImages on NixOS
-      google-chrome # Browser
-      brave # Browser
-      remmina # XRDP & VNC Client
-      obsidian # Notes
-      obs-studio # Recording
-      simple-scan # Scanning
-      discord # Chat
-      flameshot # Screenshot Tool
-      gimp # Image Editor
-      inkscape # Vector Editor
-      networkmanager-vpnc # VPN
-      networkmanager-openvpn # VPN
-      networkmanager-openconnect # VPN
-      trayscale # Tray Icon
-      signal-desktop # Chat
-      solaar # Logitech Unifying Receiver
-      thunderbird # Email
-      birdtray # Thunderbird Tray Icon
-      vscode # Code Editor
-      element-desktop # Chat
-      krdc # Remote Desktop
-      rustdesk-flutter # Remote Desktop
-      localsend # Local File Sharing
+      # Security & Privacy
+      bitwarden-desktop # Bitwarden Desktop
+      keepassxc # Password Manager
+      yubikey-manager # Yubikey CLI
+      yubioath-flutter # Yubikey Authenticator
+
+      # Office & Productivity
       joplin-desktop # Notes
-      graphviz # Graphs
-      zgrviewer # Graphs Viewer
-      drawio # Diagrams
+      libreoffice-qt6 # Office
+      obsidian # Notes
 
       # File Management
       p7zip # Zip Encryption
-      rsync # Syncer - $ rsync -r dir1/ dir2/
-      unzip # Zip Files
+      ranger # File Manager
+      rclone # Rsync for Cloud Storage
+      rsync # File Sync
+      syncthing # Sync Tool
       unrar # Rar Files
+      unzip # Zip Files
       zip # Zip
-      rclone # Gdrive ($ rclone config | rclone mount --daemon gdrive: <mount> | fusermount -u <mount>)
 
-      # Misc
-      adwaita-icon-theme # Icons for GTK apps
-      cacert # CA Certificates
-      efibootmgr # EFI Boot Manager
-      libreoffice-qt6 # Office
-      qFlipper # Flipper Zero
-      ferdium # Services Manager
-
-      # Security
-      yubioath-flutter # Yubikey Authenticator
-      yubikey-manager # Yubikey CLI
-      bitwarden-desktop # Bitwarden Desktop
-      keepassxc # Password Manager
-
-      # University
+      # Virtualization & Remote Access
+      krdc # Remote Desktop
+      remmina # XRDP & VNC Client
+      rustdesk-flutter # Remote Desktop
       vmware-horizon-client # Remote Desktop
+
+      # Applications
+      birdtray # Thunderbird Tray Icon
+      brave # Browser
+      discord # Chat
+      drawio # Diagrams
+      element-desktop # Chat
+      ferdium # Services Manager
+      flameshot # Screenshot Tool
+      gimp # Image Editor
+      google-chrome # Browser
+      graphviz # Graphs
+      inkscape # Vector Editor
+      localsend # Local File Sharing
+      obs-studio # Recording
+      qFlipper # Flipper Zero
+      signal-desktop # Chat
+      simple-scan # Scanning
+      solaar # Logitech Unifying Receiver
+      thunderbird # Email
+      trayscale # Tray Icon
+      vscode # Code Editor
+      zen-browser.packages."${system}".default # Zen Browser Beta
+      zgrviewer # Graphs Viewer
+
+      # Miscellaneous
 
       # Other Packages Found @
       # - ./<host>/default.nix
