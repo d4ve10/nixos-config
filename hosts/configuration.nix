@@ -141,6 +141,7 @@ in
       nil # LSP for Nix
       mongosh # MongoDB Shell
       postman # API Testing
+      nixfmt-rfc-style # Nix formatting
 
       # Sysadmin
       nmap # Network
