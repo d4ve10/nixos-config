@@ -142,6 +142,7 @@ in
       mongosh # MongoDB Shell
       postman # API Testing
       nixfmt-rfc-style # Nix formatting
+      distrobox # Create small VMs
 
       # Sysadmin
       nmap # Network
