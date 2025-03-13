@@ -130,6 +130,8 @@ in
     systemPackages = with pkgs; with pkgs.kdePackages; [
       inputs.zen-browser.packages."${system}".default # Zen Browser Beta
       # Developing
+      rustup # Rust
+      cargo # Rust
       git # Version Control
       uv # Python Project Manager
       python3 # Python
