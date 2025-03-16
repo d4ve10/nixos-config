@@ -236,7 +236,6 @@ in
       # Virtualization & Remote Access
       krdc # Remote Desktop
       remmina # XRDP & VNC Client
-      rustdesk-flutter # Remote Desktop
       vmware-horizon-client # Remote Desktop
 
       # Applications
@@ -270,8 +269,8 @@ in
       # - ../modules
     ] ++
     (with stable; [
-      # Apps
-      # firefox # Browser
+      # Virtualization & Remote Access
+      rustdesk-flutter # Remote Desktop
     ]);
 
     etc."current-system-packages".text =
