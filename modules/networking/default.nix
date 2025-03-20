@@ -12,4 +12,5 @@
 
 [
   ./networking.nix
+  ./networkmanager-dispatcher.nix
 ]
