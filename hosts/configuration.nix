@@ -171,10 +171,13 @@ in
       cacert # CA Certificates
       cmatrix # Matrix
       coreutils # GNU Utilities
+      ddcutil # Monitor Control
+      ddcui # Monitor Control GUI
       efibootmgr # EFI Boot Manager
       ethtool # Network Config
       hdparm # Disk Management
       htop # Resource Manager
+      i2c-tools # I2C
       iftop # Network Monitor
       iperf # Network Speed
       killall # Process Killer
@@ -290,6 +293,8 @@ in
     enable32Bit = true;
   };
 
+  # Enable I2C for ddcutil
+  hardware.i2c.enable = true;
 
   programs.firefox = {
     enable = true;
