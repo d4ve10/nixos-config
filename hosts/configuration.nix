@@ -35,6 +35,7 @@ in
     import ../modules/desktops ++
     import ../modules/editors ++
     import ../modules/hardware ++
+    import ../modules/networking ++
     import ../modules/programs ++
     import ../modules/services ++
     import ../modules/shell ++
@@ -52,20 +53,7 @@ in
 
   users.users.${vars.user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" ];
-  };
-
-  networking = with host; {
-    networkmanager.enable = true;
-    wireguard.enable = true;
-    # wireless.iwd.enable = true;
-    # networkmanager.wifi.backend = "iwd";
-    hostName = hostName;
-    enableIPv6 = true;
-    usePredictableInterfaceNames = false;
-    # Syncthing Ports
-    firewall.allowedTCPPorts = [ 22000 ];
-    firewall.allowedUDPPorts = [ 22000 21027 51820 ];
+    extraGroups = [ "wheel" "video" "audio" "camera" ];
   };
 
   time.timeZone = "${vars.timeZone}";
