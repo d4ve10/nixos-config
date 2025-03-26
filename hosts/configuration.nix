@@ -282,6 +282,10 @@ in
     enable32Bit = true;
   };
 
+  # Enable Logitech Unifying Receiver
+  hardware.logitech.wireless.enable = true;
+  hardware.logitech.wireless.enableGraphical = true;
+
   # Enable I2C for ddcutil
   hardware.i2c.enable = true;
 
