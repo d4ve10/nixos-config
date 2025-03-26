@@ -121,6 +121,7 @@ in
       distrobox # Create small VMs
       git # Version Control
       go # Go
+      godot # Game Engine
       jdk23 # Java
       mariadb # MariaDB Database
       mongosh # MongoDB Shell
