@@ -331,6 +331,7 @@ in
   };
 
   services = {
+    fwupd.enable = true;
     openssh = {
       enable = true;
       allowSFTP = true;
