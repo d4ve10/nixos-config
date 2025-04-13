@@ -180,6 +180,7 @@ in
       nix-tree # Browse Nix Store
       nvd # Nix Diff
       openssl # Security
+      partitionmanager # Partition Manager
       pciutils # Manage PCI
       powertop # Power Management
       ripgrep # Search
