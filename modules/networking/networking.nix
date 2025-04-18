@@ -13,6 +13,7 @@
     usePredictableInterfaceNames = false;
 
     firewall = {
+      checkReversePath = "loose"; # loose instead of strict for wireguard connections
       allowedTCPPorts = [
         22000 # Syncthing
       ];
