@@ -246,7 +246,7 @@ in
       localsend # Local File Sharing
       obs-studio # Recording
       qFlipper # Flipper Zero
-      signal-desktop # Chat
+      signal-desktop-bin # Chat
       simple-scan # Scanning
       solaar # Logitech Unifying Receiver
       thunderbird # Email
