@@ -53,7 +53,7 @@ in
 
   users.users.${vars.user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "camera" ];
+    extraGroups = [ "wheel" "video" "audio" "camera" "dialout" ];
   };
 
   time.timeZone = "${vars.timeZone}";
@@ -245,7 +245,6 @@ in
       inkscape # Vector Editor
       localsend # Local File Sharing
       obs-studio # Recording
-      qFlipper # Flipper Zero
       signal-desktop-bin # Chat
       simple-scan # Scanning
       solaar # Logitech Unifying Receiver
@@ -286,6 +285,9 @@ in
   # Enable Logitech Unifying Receiver
   hardware.logitech.wireless.enable = true;
   hardware.logitech.wireless.enableGraphical = true;
+
+  # Enable Flipper Zero
+  hardware.flipperzero.enable = true;
 
   # Enable I2C for ddcutil
   hardware.i2c.enable = true;
