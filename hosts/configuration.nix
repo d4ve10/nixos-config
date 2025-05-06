@@ -169,6 +169,7 @@ in
       i2c-tools # I2C
       iftop # Network Monitor
       iperf # Network Speed
+      jq # JSON Parser
       killall # Process Killer
       konsole # Terminal Emulator
       linux-firmware # Proprietary Hardware Blob
