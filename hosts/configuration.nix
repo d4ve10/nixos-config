@@ -293,6 +293,9 @@ in
   # Enable I2C for ddcutil
   hardware.i2c.enable = true;
 
+  # Enable USB WLAN and WWAN adapters
+  hardware.usb-modeswitch.enable = true;
+
   programs.firefox = {
     enable = true;
     nativeMessagingHosts.packages = [ pkgs.kdePackages.plasma-browser-integration ];
