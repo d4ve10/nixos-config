@@ -16,11 +16,13 @@
       checkReversePath = "loose"; # loose instead of strict for wireguard connections
       allowedTCPPorts = [
         22000 # Syncthing
+        53317 # LocalSend
       ];
       allowedUDPPorts = [
         22000 # Syncthing
         21027 # Syncthing Discovery
         51820 # Wireguard
+        53317 # LocalSend
       ];
     };
   };
