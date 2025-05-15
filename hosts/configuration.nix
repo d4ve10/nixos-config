@@ -346,6 +346,7 @@ in
         HostKeyAlgorithms +ssh-rsa
       '';
     };
+    resolved.enable = true;
     pcscd.enable = true;
     udev.packages = [ pkgs.yubikey-personalization ];
   };
