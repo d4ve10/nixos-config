@@ -119,6 +119,7 @@ in
 
       # Development Tools
       distrobox # Create small VMs
+      gcc # C Compiler
       git # Version Control
       go # Go
       godot # Game Engine
@@ -129,6 +130,7 @@ in
       nixfmt-rfc-style # Nix formatting
       nodejs # Javascript
       nodePackages.pnpm # Package Manager
+      ocl-icd # OpenCL ICD Loader
       postgresql # PostgreSQL Database
       postman # API Testing
       python3 # Python
