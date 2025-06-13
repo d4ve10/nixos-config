@@ -80,6 +80,8 @@ in
   security = {
     rtkit.enable = true;
     polkit.enable = true;
+    # See https://discourse.nixos.org/t/distrobox-selinux-oci-permission-error/64943/14
+    lsm = lib.mkForce [];
   };
 
   fonts = {
