@@ -351,6 +351,10 @@ in
       '';
     };
     resolved.enable = true;
+    # see https://github.com/NixOS/nixpkgs/issues/412777
+    resolved.extraConfig = ''
+      MulticastDNS = off
+    '';
     pcscd.enable = true;
     udev.packages = [ pkgs.yubikey-personalization ];
   };
