@@ -355,6 +355,7 @@ in
     resolved.extraConfig = ''
       MulticastDNS = off
     '';
+    resolved.fallbackDns = [];
     pcscd.enable = true;
     udev.packages = [ pkgs.yubikey-personalization ];
   };
