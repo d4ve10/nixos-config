@@ -121,6 +121,7 @@ in
 
       # Development Tools
       distrobox # Create small VMs
+      esphome # ESPHome
       gcc # C Compiler
       git # Version Control
       go # Go
