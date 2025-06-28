@@ -177,6 +177,7 @@ in
       jq # JSON Parser
       killall # Process Killer
       konsole # Terminal Emulator
+      libcec # HDMI-CEC
       linux-firmware # Proprietary Hardware Blob
       lshw # Hardware Config
       nano # Text Editor
