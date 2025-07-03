@@ -9,7 +9,7 @@
 #           └─ default.nix
 #
 
-{ inputs, nixpkgs, nixpkgs-stable, nixos-hardware, nix-index-database, my_dotfiles, home-manager, nur, nixvim, plasma-manager, vars, fw-fanctrl, ... }:
+{ inputs, nixpkgs, nixpkgs-stable, nixos-hardware, disko, nix-index-database, my_dotfiles, home-manager, nur, nixvim, plasma-manager, vars, fw-fanctrl, ... }:
 
 let
   system = "x86_64-linux";
@@ -93,6 +93,31 @@ in
       nix-index-database.nixosModules.nix-index
       nixvim.nixosModules.nixvim
       ./dave-gaming
+      ./configuration.nix
+
+      home-manager.nixosModules.home-manager
+      {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+      }
+    ];
+  };
+
+  # Acer Predator Profile
+  dave-predator = lib.nixosSystem {
+    inherit system;
+    specialArgs = {
+      inherit inputs my_dotfiles system stable vars;
+      host = {
+        hostName = "dave-predator";
+      };
+    };
+    modules = [
+      nix-index-database.nixosModules.nix-index
+      nixvim.nixosModules.nixvim
+      disko.nixosModules.disko
+      ./dave-predator
       ./configuration.nix
 
       home-manager.nixosModules.home-manager
