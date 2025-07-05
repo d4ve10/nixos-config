@@ -175,6 +175,7 @@ in
       iftop # Network Monitor
       iperf # Network Speed
       jq # JSON Parser
+      kcolorchooser # Color Picker
       killall # Process Killer
       konsole # Terminal Emulator
       libcec # HDMI-CEC
