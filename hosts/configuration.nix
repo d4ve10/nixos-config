@@ -125,6 +125,7 @@ in
       gcc # C Compiler
       git # Version Control
       go # Go
+      go-task # Task Runner
       godot # Game Engine
       jdk23 # Java
       mariadb # MariaDB Database
