@@ -5,6 +5,9 @@
   networking = {
     networkmanager.enable = true;
     networkmanager.wifi.powersave = true;
+    networkmanager.plugins = with pkgs; [
+      networkmanager-openvpn
+    ];
     wireguard.enable = true;
     # wireless.iwd.enable = true;
     # networkmanager.wifi.backend = "iwd";
