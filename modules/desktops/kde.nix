@@ -234,7 +234,7 @@ with lib;
             description = "Ferdi";
             match = {
               window-class = {
-                value = "^Ferdi";
+                value = "^ferdi";
                 type = "regex";
                 match-whole = false;
               };
