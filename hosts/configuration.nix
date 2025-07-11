@@ -49,6 +49,7 @@ in
       tmpfsSize = "5GB";
     };
     kernelPackages = pkgs.linuxPackages_latest;
+    supportedFilesystems = [ "nfs" ];
   };
 
   users.users.${vars.user} = {
