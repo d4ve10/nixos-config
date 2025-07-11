@@ -116,6 +116,7 @@ in
       EDITOR = "${vars.editor}";
       VISUAL = "${vars.editor}";
       BROWSER = "${vars.browser}";
+      SSL_CERT_FILE = "/etc/ssl/certs/ca-bundle.crt";
     };
     systemPackages = with pkgs; with pkgs.kdePackages; with inputs; [
 
