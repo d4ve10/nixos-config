@@ -53,6 +53,9 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = false;
 
+  services.mullvad-vpn.enable = true;
+  services.mullvad-vpn.package = pkgs.mullvad-vpn;
+
   users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGPYmcb2iW4ywjEkfsblxCAu6+dTphIPcZZUXpBw9CcW dave10@dave-framework"
   ];
