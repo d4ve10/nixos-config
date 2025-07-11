@@ -23,11 +23,13 @@
       # config.nur.repos.c0deaddict.oversteer # Steering Wheel Configuration
       # heroic # Game Launcher
       # lutris # Game Launcher
+      cemu # Wii U Emulator
+      dolphin-emu # GameCube / Wii Emulator
       prismlauncher # MC Launcher
-      retroarch-free # Emulator
       protonup-qt # Proton-GE GUI Installer
-      vulkan-tools # vkcube
       mesa-demos # glxgears
+      retroarch-free # Emulator
+      vulkan-tools # vkcube
 
       # Cursor Fix for X11 apps
       xsettingsd
