@@ -74,4 +74,10 @@
 
   hardware.graphics.extraPackages = with pkgs; [ rocmPackages.clr.icd ];
 
+  home-manager.users.${vars.user} = {
+    programs.plasma = {
+      kwin.nightLight.enable = lib.mkForce false;
+    };
+  };
+
 }
