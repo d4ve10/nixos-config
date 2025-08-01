@@ -66,4 +66,7 @@
       kwin.nightLight.enable = lib.mkForce false;
     };
   };
+
+  security.sudo.wheelNeedsPassword = false;
+
 }

@@ -80,4 +80,6 @@
     };
   };
 
+  security.sudo.wheelNeedsPassword = false;
+
 }
