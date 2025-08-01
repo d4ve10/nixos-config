@@ -241,7 +241,6 @@ in
       # Virtualization & Remote Access
       krdc # Remote Desktop
       remmina # XRDP & VNC Client
-      vmware-horizon-client # Remote Desktop
 
       # Applications
       birdtray # Thunderbird Tray Icon
