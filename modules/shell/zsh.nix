@@ -26,7 +26,7 @@ in
         autosuggestion.enable = true;
         syntaxHighlighting.enable = true;
         history.size = 100000;
-        dotDir = ".config/zsh";
+        dotDir = "/home/${vars.user}/.config/zsh";
 
         initContent = lib.mkMerge [
           (lib.mkOrder 550 zsh_init)
