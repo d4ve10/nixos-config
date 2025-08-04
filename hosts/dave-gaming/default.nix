@@ -42,6 +42,7 @@
 
   networking.firewall.enable = false;
   networking.interfaces.eth0.wakeOnLan.enable = true;
+  networking.interfaces.eth1.wakeOnLan.enable = true;
 
   kde.enable = true;
   virtualization.enable = true;
