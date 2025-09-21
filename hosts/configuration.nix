@@ -209,7 +209,6 @@ in
       alsa-utils # Audio Control
       handbrake # Video Converter
       imagemagick # Image Converter
-      jellyfin-media-player # Jellyfin Media Player
       mpv # Media Player
       pavucontrol # Audio Control
       pipewire # Audio Server/Control
