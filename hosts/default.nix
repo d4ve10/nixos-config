@@ -9,7 +9,7 @@
 #           └─ default.nix
 #
 
-{ inputs, nixpkgs, nixpkgs-stable, nixos-hardware, disko, nix-index-database, my_dotfiles, home-manager, nur, nixvim, plasma-manager, vars, fw-fanctrl, ... }:
+{ inputs, nixpkgs, nixpkgs-stable, nixos-hardware, disko, nix-index-database, my_dotfiles, home-manager, nur, nixvim, plasma-manager, vars, ... }:
 
 let
   system = "x86_64-linux";
@@ -49,7 +49,7 @@ in
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+        home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
       }
     ];
   };
@@ -66,7 +66,6 @@ in
     modules = [
       nix-index-database.nixosModules.nix-index
       nixos-hardware.nixosModules.framework-11th-gen-intel
-      fw-fanctrl.nixosModules.default
       nixvim.nixosModules.nixvim
       ./dave-framework
       ./configuration.nix
@@ -75,7 +74,7 @@ in
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+        home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
       }
     ];
   };
@@ -99,7 +98,7 @@ in
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+        home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
       }
     ];
   };
@@ -124,7 +123,7 @@ in
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+        home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
       }
     ];
   };
