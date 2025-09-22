@@ -33,6 +33,13 @@
     };
   };
 
+  environment = {
+    systemPackages = with pkgs; [
+      headsetcontrol
+    ];
+  };
+  services.udev.packages = [ pkgs.headsetcontrol ];
+
   laptop.enable = true;
   kde.enable = true;
   virtualization.enable = true;
