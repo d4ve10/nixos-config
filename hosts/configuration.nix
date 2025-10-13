@@ -54,7 +54,7 @@ in
 
   users.users.${vars.user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "camera" "dialout" ];
+    extraGroups = [ "wheel" "video" "audio" "camera" "dialout" "adbusers" "kvm" ];
   };
 
   time.timeZone = "${vars.timeZone}";
@@ -344,6 +344,7 @@ in
         AddKeysToAgent yes
       '';
     };
+    adb.enable = true;
   };
 
   services = {
