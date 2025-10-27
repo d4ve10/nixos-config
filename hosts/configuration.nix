@@ -54,7 +54,7 @@ in
 
   users.users.${vars.user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "camera" "dialout" "adbusers" "kvm" ];
+    extraGroups = [ "wheel" "video" "audio" "camera" "dialout" "adbusers" "kvm" "i2c" ];
   };
 
   time.timeZone = "${vars.timeZone}";
