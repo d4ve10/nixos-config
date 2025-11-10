@@ -129,7 +129,7 @@ in
       go # Go
       go-task # Task Runner
       godot # Game Engine
-      jdk23 # Java
+      jdk25 # Java
       mariadb # MariaDB Database
       mongosh # MongoDB Shell
       nil # LSP for Nix
@@ -223,7 +223,6 @@ in
       yubioath-flutter # Yubikey Authenticator
 
       # Office & Productivity
-      joplin-desktop # Notes
       libreoffice-qt6 # Office
       obsidian # Notes
 
