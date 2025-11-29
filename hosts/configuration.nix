@@ -306,7 +306,6 @@ in
 
   programs.firefox = {
     enable = true;
-    nativeMessagingHosts.packages = [ pkgs.kdePackages.plasma-browser-integration ];
     preferences = {
       "widget.use-xdg-desktop-portal.file-picker" = 1;
       "widget.use-xdg-desktop-portal.settings" = 1;
@@ -402,7 +401,6 @@ in
     programs = {
       home-manager.enable = true;
     };
-    home.file.".mozilla/native-messaging-hosts/org.kde.plasma.browser_integration.json".source = "${pkgs.kdePackages.plasma-browser-integration}/lib/mozilla/native-messaging-hosts/org.kde.plasma.browser_integration.json";
     # xdg.configFile."mimeapps.list".force = true;
     # xdg = {
     #   mime.enable = true;
