@@ -288,7 +288,7 @@ with lib;
             };
             powerProfile = "powerSaving";
             turnOffDisplay = {
-              idleTimeout = 600;
+              idleTimeout = 540;
             };
           };
           lowBattery = {
