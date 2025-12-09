@@ -16,7 +16,7 @@
 
     hardware = {
       steam-hardware.enable = true; # Enable Steam Controller + Valve Index
-      xone.enable = true; # Support for the Xbox controller USB dongle
+      #xone.enable = true; # Support for the Xbox controller USB dongle
     };
 
     environment.systemPackages = with pkgs; [
