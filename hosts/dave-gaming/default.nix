@@ -61,7 +61,7 @@
   services.ollama = {
     enable = true;
     host = "0.0.0.0";
-    acceleration = "rocm";
+    package = pkgs.ollama-rocm;
   };
 
   systemd.tmpfiles.rules =
