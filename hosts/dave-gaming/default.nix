@@ -41,10 +41,6 @@
     ];
   };
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "qtwebengine-5.15.19" # For jellyfin-media-player for now
-  ];
-
   networking.firewall.enable = false;
   networking.interfaces.eth0.wakeOnLan.enable = true;
   networking.interfaces.eth1.wakeOnLan.enable = true;
