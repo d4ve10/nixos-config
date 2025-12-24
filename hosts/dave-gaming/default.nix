@@ -37,7 +37,7 @@
   environment = {
     systemPackages = with pkgs; [
       input-leap
-      jellyfin-media-player
+      jellyfin-desktop
     ];
   };
 
