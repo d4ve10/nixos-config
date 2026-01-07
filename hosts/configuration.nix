@@ -122,6 +122,7 @@ in
     systemPackages = with pkgs; with pkgs.kdePackages; with inputs; [
 
       # Development Tools
+      android-tools # Android ADB, Fastboot, etc.
       distrobox # Create small VMs
       esphome # ESPHome
       gcc # C Compiler
@@ -342,7 +343,6 @@ in
         AddKeysToAgent yes
       '';
     };
-    adb.enable = true;
   };
 
   services = {
