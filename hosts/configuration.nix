@@ -224,6 +224,7 @@ in
       yubioath-flutter # Yubikey Authenticator
 
       # Office & Productivity
+      joplin-desktop # Notes
       libreoffice-qt6 # Office
       obsidian # Notes
 
