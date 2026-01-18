@@ -134,7 +134,7 @@ in
       mariadb # MariaDB Database
       mongosh # MongoDB Shell
       nil # LSP for Nix
-      nixfmt-rfc-style # Nix formatting
+      nixfmt # Nix formatting
       nodejs # Javascript
       nodePackages.pnpm # Package Manager
       ocl-icd # OpenCL ICD Loader
