@@ -357,10 +357,8 @@ in
     };
     resolved.enable = true;
     # see https://github.com/NixOS/nixpkgs/issues/412777
-    resolved.extraConfig = ''
-      MulticastDNS = off
-    '';
-    resolved.fallbackDns = [];
+    resolved.settings.Resolve.MulticastDNS = false;
+    resolved.settings.Resolve.FallbackDNS = "";
     pcscd.enable = true;
     udev.packages = [ pkgs.yubikey-personalization ];
   };
