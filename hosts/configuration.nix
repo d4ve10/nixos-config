@@ -262,7 +262,7 @@ in
       thunderbird # Email
       trayscale # Tray Icon
       vscode # Code Editor
-      zen-browser.packages."${system}".default # Zen Browser Beta
+      zen-browser.packages."${stdenv.hostPlatform.system}".default # Zen Browser Beta
       zgrviewer # Graphs Viewer
 
       # Miscellaneous
