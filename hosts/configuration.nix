@@ -208,7 +208,7 @@ in
 
       # Media & Graphics
       alsa-utils # Audio Control
-      handbrake # Video Converter
+      #handbrake # Video Converter
       imagemagick # Image Converter
       mpv # Media Player
       pavucontrol # Audio Control
