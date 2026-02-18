@@ -45,6 +45,7 @@ with lib;
       };
       systemPackages = with pkgs.kdePackages; [
         packagekit-qt # Package Updater
+        qrca # QR Code Scanner
       ];
     };
 
