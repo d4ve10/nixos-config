@@ -157,7 +157,7 @@ in
       traceroute # Network
       wavemon # Wifi Monitor
       wireguard-tools # VPN
-      wireshark-qt # Network Analyzer
+      wireshark # Network Analyzer
 
       # System Utilities
       adwaita-icon-theme # Icons for GTK apps

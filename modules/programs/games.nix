@@ -33,7 +33,7 @@
 
       # Cursor Fix for X11 apps
       xsettingsd
-      xorg.xrdb
+      xrdb
       # pcsx2 # Emulator
     ];
 
@@ -66,10 +66,10 @@
     nixpkgs.config.packageOverrides = pkgs: {
       steam = pkgs.steam.override {
         extraPkgs = pkgs: with pkgs; [
-          xorg.libXcursor
-          xorg.libXi
-          xorg.libXinerama
-          xorg.libXScrnSaver
+          libxcursor
+          libxi
+          libxinerama
+          libxscrnsaver
           libpng
           libpulseaudio
           libvorbis
