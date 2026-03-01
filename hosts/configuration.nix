@@ -225,7 +225,7 @@ in
 
       # Office & Productivity
       joplin-desktop # Notes
-      libreoffice-qt6 # Office
+      libreoffice-qt6-fresh # Office
       obsidian # Notes
 
       # File Management
