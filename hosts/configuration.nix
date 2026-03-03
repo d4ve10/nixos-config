@@ -256,7 +256,7 @@ in
       inkscape # Vector Editor
       localsend # Local File Sharing
       obs-studio # Recording
-      signal-desktop-bin # Chat
+      signal-desktop # Chat
       simple-scan # Scanning
       solaar # Logitech Unifying Receiver
       thunderbird # Email
