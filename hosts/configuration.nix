@@ -136,7 +136,7 @@ in
       nil # LSP for Nix
       nixfmt # Nix formatting
       nodejs # Javascript
-      nodePackages.pnpm # Package Manager
+      pnpm # Package Manager
       ocl-icd # OpenCL ICD Loader
       postgresql # PostgreSQL Database
       postman # API Testing
