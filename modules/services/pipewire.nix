@@ -3,9 +3,6 @@
 #
 
 { pkgs, vars, ... }:
-let
-  inherit (pkgs) rnnoise-plugin;
-in
 {
   services = {
     pulseaudio.enable = false;
@@ -17,6 +14,9 @@ in
       };
       pulse.enable = true;
       jack.enable = true;
+      extraLadspaPackages = with pkgs; [
+        rnnoise-plugin
+      ];
     };
   };
 
@@ -44,7 +44,7 @@ in
                   {
                     type = "ladspa";
                     name = "rnnoise";
-                    plugin = "${rnnoise-plugin}/lib/ladspa/librnnoise_ladspa.so";
+                    plugin = "librnnoise_ladspa";
                     label = "noise_suppressor_mono";
                     control = {
                       "VAD Threshold (%)" = 80.0;
