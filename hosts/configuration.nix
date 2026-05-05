@@ -248,6 +248,7 @@ in
       discord # Chat
       drawio # Diagrams
       element-desktop # Chat
+      feishin # Music Player
       ferdium # Services Manager
       flameshot # Screenshot Tool
       gimp # Image Editor
