@@ -28,6 +28,7 @@
       prismlauncher # MC Launcher
       protonup-qt # Proton-GE GUI Installer
       mesa-demos # glxgears
+      moonlight-qt # Game Streaming
       retroarch-free # Emulator
       vulkan-tools # vkcube
 
@@ -36,6 +37,37 @@
       xrdb
       # pcsx2 # Emulator
     ];
+
+    services.sunshine = {
+      enable = lib.mkDefault false;
+      autoStart = true;
+      capSysAdmin = true;
+      openFirewall = true;
+      applications = {
+        env = {
+          PATH = "$(PATH):$(HOME)/.local/bin";
+        };
+        apps = [
+          {
+            name = "Desktop";
+            image-path = "desktop.png";
+          }
+          {
+            name = "Steam Big Picture";
+            detached = [
+              "sudo -u ${vars.user} setsid steam steam://open/bigpicture"
+            ];
+            prep-cmd = [
+              {
+                do = "";
+                undo = "sudo -u ${vars.user} setsid steam steam://close/bigpicture";
+              }
+            ];
+            image-path = "steam.png";
+          }
+        ];
+      };
+    };
 
     programs = {
       steam = {

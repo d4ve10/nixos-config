@@ -48,6 +48,7 @@
   kde.enable = true;
   virtualization.enable = true;
   gaming.enable = true;
+  services.sunshine.enable = true;
 
   services.displayManager.autoLogin.user = "${vars.user}";
   services.displayManager.autoLogin.enable = true;
