@@ -218,7 +218,6 @@ in
       vlc # Media Player
 
       # Security & Privacy
-      bitwarden-desktop # Bitwarden Desktop
       keepassxc # Password Manager
       yubikey-manager # Yubikey CLI
       yubioath-flutter # Yubikey Authenticator
