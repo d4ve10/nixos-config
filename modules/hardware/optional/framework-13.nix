@@ -1,5 +1,5 @@
 #
-#  Framework Laptop specific hardware configuration
+#  Framework Laptop 13 specific hardware configuration
 #
 
 { config, lib, pkgs, vars, inputs, ... }:

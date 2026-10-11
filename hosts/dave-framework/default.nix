@@ -5,7 +5,7 @@
 { lib, pkgs, vars, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ./../../modules/hardware/optional/framework-laptop.nix ];
+  imports = [ ./hardware-configuration.nix ./../../modules/hardware/optional/framework-13-pro.nix ];
 
   boot = {
     loader = {

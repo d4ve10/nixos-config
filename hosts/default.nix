@@ -65,7 +65,7 @@ in
     };
     modules = [
       nix-index-database.nixosModules.nix-index
-      nixos-hardware.nixosModules.framework-11th-gen-intel
+      nixos-hardware.nixosModules.framework-intel-core-ultra-series3
       nixvim.nixosModules.nixvim
       ./dave-framework
       ./configuration.nix
