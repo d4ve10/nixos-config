@@ -5,17 +5,25 @@
 
 {
   services = {
-    printing.enable = true;
-    printing.drivers = with pkgs; [
-      gutenprint
-      gutenprintBin
-      cups-filters
-    ];
+    printing = {
+      enable = true;
+      browsed.enable = true;
+      drivers = with pkgs; [
+        gutenprint
+        gutenprintBin
+        canon-cups-ufr2
+        cnijfilter2
+        cups-bjnp
+        cups-browsed
+        cups-filters
+      ];
+    };
   };
   hardware = {
     sane = {
       enable = true;
       extraBackends = [ pkgs.sane-airscan ];
+      openFirewall = true;
     };
   };
   users.users.${vars.user}.extraGroups = [ "scanner" "lp" ];
