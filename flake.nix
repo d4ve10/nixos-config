@@ -76,6 +76,7 @@
         editor = "nvim";
         browser = "firefox";
         timeZone = "Europe/Berlin";
+        wirelessRegulatoryDomain = "DE";
 
         defaultLocale = "en_US.UTF-8";
         LC_ADDRESS = "de_DE.UTF-8";

@@ -30,5 +30,11 @@
     };
   };
 
+  hardware.wirelessRegulatoryDatabase = true;
+  boot.extraModprobeConfig = ''
+    options cfg80211 ieee80211_regdom="${vars.wirelessRegulatoryDomain}"
+  '';
+  environment.systemPackages = with pkgs; [ iw ];
+
   users.users.${vars.user}.extraGroups = [ "networkmanager" ];
 }
