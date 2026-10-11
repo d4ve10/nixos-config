@@ -248,7 +248,6 @@ in
       drawio # Diagrams
       element-desktop # Chat
       feishin # Music Player
-      ferdium # Services Manager
       flameshot # Screenshot Tool
       gimp # Image Editor
       google-chrome # Browser
@@ -262,6 +261,7 @@ in
       thunderbird # Email
       trayscale # Tray Icon
       vscode # Code Editor
+      zapzap # WhatsApp Client
       zen-browser.packages."${stdenv.hostPlatform.system}".default # Zen Browser Beta
       zgrviewer # Graphs Viewer
 
