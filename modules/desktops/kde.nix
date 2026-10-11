@@ -266,6 +266,42 @@ with lib;
               };
             };
           }
+          {
+            description = "ZapZap";
+            match = {
+              window-class = {
+                value = "(.*)zapzap";
+                type = "regex";
+                match-whole = false;
+              };
+              title = {
+                value = "^ZapZap";
+                type = "regex";
+              };
+            };
+            apply = {
+              maximizehoriz = {
+                value = true;
+                apply = "initially";
+              };
+              maximizevert = {
+                value = true;
+                apply = "initially";
+              };
+              screen = {
+                value = 2;
+                apply = "remember";
+              };
+              activity = {
+                value = "Communication";
+                apply = "force";
+              };
+              desktops = {
+                value = "Desktop_1";
+                apply = "force";
+              };
+            };
+          }
         ];
 
         powerdevil = {
