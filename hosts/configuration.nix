@@ -208,6 +208,7 @@ in
 
       # Media & Graphics
       alsa-utils # Audio Control
+      easyeffects # Audio Effects
       #handbrake # Video Converter
       imagemagick # Image Converter
       mpv # Media Player
