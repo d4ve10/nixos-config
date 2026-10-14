@@ -24,7 +24,7 @@
 #       │   └─ default.nix
 #       └─ ./options.nix
 
-{ lib, config, pkgs, stable, my_dotfiles, inputs, vars, host, ... }:
+{ lib, config, pkgs, my_dotfiles, inputs, vars, host, ... }:
 
 let
   terminal = pkgs.${vars.terminal};
@@ -246,6 +246,7 @@ in
       inkscape # Vector Editor
       localsend # Local File Sharing
       obs-studio # Recording
+      rustdesk-flutter # Remote Desktop
       signal-desktop # Chat
       simple-scan # Scanning
       solaar # Logitech Unifying Receiver
@@ -261,11 +262,7 @@ in
       # Other Packages Found @
       # - ./<host>/default.nix
       # - ../modules
-    ] ++
-    (with stable; [
-      # Virtualization & Remote Access
-      rustdesk-flutter # Remote Desktop
-    ]);
+    ];
 
     etc."current-system-packages".text =
       let

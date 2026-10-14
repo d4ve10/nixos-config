@@ -2,7 +2,6 @@
   inputs =
     {
       nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; # Nix Packages (Default)
-      nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11"; # Stable Nix Packages
       nixos-hardware.url = "github:nixos/nixos-hardware/master"; # Hardware Specific Configurations
       nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
@@ -22,22 +21,10 @@
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
-      # Stable User Environment Manager
-      home-manager-stable = {
-        url = "github:nix-community/home-manager/release-24.11";
-        inputs.nixpkgs.follows = "nixpkgs-stable";
-      };
-
       # Disko - NixOS Installer
       disko = {
         url = "github:nix-community/disko";
         inputs.nixpkgs.follows = "nixpkgs";
-      };
-
-      # NUR Community Packages
-      nur = {
-        url = "github:nix-community/NUR";
-        # Requires "nur.nixosModules.nur" to be added to the host modules
       };
 
       # Fixes OpenGL With Other Distros.
@@ -52,12 +39,6 @@
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
-      # Neovim
-      nixvim-stable = {
-        url = "github:nix-community/nixvim/nixos-24.11";
-        inputs.nixpkgs.follows = "nixpkgs-stable";
-      };
-
       # KDE Plasma User Settings Generator
       plasma-manager = {
         url = "github:pjones/plasma-manager";
@@ -68,7 +49,7 @@
       zen-browser.url = "github:0xc000022070/zen-browser-flake";
     };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, nixos-hardware, nix-cachyos-kernel, nix-index-database, my_dotfiles, home-manager, home-manager-stable, disko, nur, nixgl, nixvim, nixvim-stable, plasma-manager, zen-browser, ... }: # Function telling flake which inputs to use
+  outputs = inputs @ { self, nixpkgs, nixos-hardware, nix-cachyos-kernel, nix-index-database, my_dotfiles, home-manager, disko, nixgl, nixvim, plasma-manager, zen-browser, ... }: # Function telling flake which inputs to use
     let
       # Variables Used In Flake
       vars = {
@@ -97,14 +78,14 @@
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs nixpkgs-stable disko nixos-hardware nix-cachyos-kernel nix-index-database my_dotfiles home-manager nur nixvim plasma-manager zen-browser vars; # Inherit inputs
+          inherit inputs nixpkgs disko nixos-hardware nix-cachyos-kernel nix-index-database my_dotfiles home-manager nixvim plasma-manager zen-browser vars; # Inherit inputs
         }
       );
 
       homeConfigurations = (
         import ./nix {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs nixpkgs-stable home-manager nixgl vars;
+          inherit inputs nixpkgs home-manager nixgl vars;
         }
       );
     };

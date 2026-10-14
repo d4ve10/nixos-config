@@ -12,7 +12,7 @@
 
 let
   system = "x86_64-linux";
-  pkgs = nixpkgs.legacyPackages.${stdenv.hostPlatform.system};
+  pkgs = nixpkgs.legacyPackages.${system};
 in
 {
   pacman = home-manager.lib.homeManagerConfiguration {

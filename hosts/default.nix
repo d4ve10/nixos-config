@@ -9,56 +9,19 @@
 #           └─ default.nix
 #
 
-{ inputs, nixpkgs, nixpkgs-stable, nixos-hardware, disko, nix-index-database, my_dotfiles, home-manager, nur, nixvim, plasma-manager, vars, ... }:
+{ inputs, nixpkgs, nixos-hardware, disko, nix-index-database, my_dotfiles, home-manager, nixvim, plasma-manager, vars, ... }:
 
 let
   system = "x86_64-linux";
 
-  pkgs = import nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-  };
-
-  stable = import nixpkgs-stable {
-    inherit system;
-    config.allowUnfree = true;
-  };
-
   lib = nixpkgs.lib;
 in
 {
-  # Desktop Profile
-  dave-pc = lib.nixosSystem {
-    inherit system;
-    specialArgs = {
-      inherit inputs system stable vars;
-      host = {
-        hostName = "dave-pc";
-        # mainMonitor = "HDMI-A-2";
-        # secondMonitor = "HDMI-A-1";
-      };
-    };
-    modules = [
-      nix-index-database.nixosModules.nix-index
-      nur.nixosModules.nur
-      nixvim.nixosModules.nixvim
-      ./dave-pc
-      ./configuration.nix
-
-      home-manager.nixosModules.home-manager
-      {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-      }
-    ];
-  };
-
   # Personal Profile
   dave-framework = lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit inputs my_dotfiles system stable vars;
+      inherit inputs my_dotfiles system vars;
       host = {
         hostName = "dave-framework";
       };
@@ -83,7 +46,7 @@ in
   dave-gaming = lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit inputs my_dotfiles system stable vars;
+      inherit inputs my_dotfiles system vars;
       host = {
         hostName = "dave-gaming-nixos";
       };
@@ -107,7 +70,7 @@ in
   dave-predator = lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit inputs my_dotfiles system stable vars;
+      inherit inputs my_dotfiles system vars;
       host = {
         hostName = "dave-predator";
       };
@@ -132,7 +95,7 @@ in
   vm = lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit inputs system stable vars;
+      inherit inputs my_dotfiles system vars;
       host = {
         hostName = "vm";
         mainMonitor = "Virtual-1";

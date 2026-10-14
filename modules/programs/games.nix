@@ -4,7 +4,7 @@
 #  When connecting a controller via bluetooth, it might error out. To fix this, remove device, pair - connect - trust, wait for auto disconnect, sudo rmmod btusb, sudo modprobe btusb, pair again.
 #
 
-{ config, pkgs, nur, lib, vars, ... }:
+{ config, pkgs, lib, vars, ... }:
 
 {
   config = lib.mkIf (config.gaming.enable) {
@@ -20,7 +20,6 @@
     };
 
     environment.systemPackages = with pkgs; [
-      # config.nur.repos.c0deaddict.oversteer # Steering Wheel Configuration
       # heroic # Game Launcher
       # lutris # Game Launcher
       cemu # Wii U Emulator

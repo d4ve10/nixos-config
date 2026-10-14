@@ -1,4 +1,4 @@
-{ config, lib, system, pkgs, stable, vars, ... }:
+{ config, lib, system, pkgs, vars, ... }:
 
 {
   environment = {
