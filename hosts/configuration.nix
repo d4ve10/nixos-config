@@ -60,17 +60,7 @@ in
   time.timeZone = "${vars.timeZone}";
   i18n = {
     defaultLocale = "${vars.defaultLocale}";
-    extraLocaleSettings = {
-      LC_ADDRESS = "${vars.LC_ADDRESS}";
-      LC_IDENTIFICATION = "${vars.LC_IDENTIFICATION}";
-      LC_MEASUREMENT = "${vars.LC_MEASUREMENT}";
-      LC_MONETARY = "${vars.LC_MONETARY}";
-      LC_NAME = "${vars.LC_NAME}";
-      LC_NUMERIC = "${vars.LC_NUMERIC}";
-      LC_PAPER = "${vars.LC_PAPER}";
-      LC_TELEPHONE = "${vars.LC_TELEPHONE}";
-      LC_TIME = "${vars.LC_TIME}";
-    };
+    extraLocaleSettings = vars.locales;
   };
 
   console = {
