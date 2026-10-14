@@ -8,6 +8,7 @@
   imports = [ ./hardware-configuration.nix ];
 
   boot = {
+    kernelPackages = lib.mkForce pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
     loader = {
       efi = {
         canTouchEfiVariables = true;
