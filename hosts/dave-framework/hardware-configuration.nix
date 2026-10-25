@@ -33,7 +33,6 @@
     }
   ];
 
-  boot.initrd.systemd.enable = true;
   suspend-then-hibernate.enable = true;
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
