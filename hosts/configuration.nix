@@ -356,8 +356,8 @@ in
   nix = {
     settings = {
       auto-optimise-store = true;
-      extra-substituters = [ "https://attic.xuyh0120.win/lantian" ];
-      extra-trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
+      extra-substituters = [ "https://cache.lantian.pub/lantian" ];
+      extra-trusted-public-keys = [ "lantian:WVGO7vsRMSEN+h7Lp7kv6SAmrkEXgUGbbXm7jMDjBuQ=" ];
     };
     gc = {
       automatic = true;
